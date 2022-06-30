@@ -1,0 +1,34 @@
+{
+    "locationdata": [
+        {
+            "location": "Katzenmaier",
+            "address": "24 W. Walton St., Chicago, IL 60610",
+            "url": [41.90062477549711, -87.62778715170194]
+        },
+        {
+            "location": "Greenbay",
+            "address": "1734 N. Orleans St., Chicago, IL 60614",
+            "url": [41.91397792412084, -87.63701318130292]
+        },
+        {
+            "location": "Howard A Yeager",
+            "address": "2245 N. Southport Ave., Chicago, IL 60614",
+            "url": [41.92328270229285, -87.66217913527552]
+        },
+        {
+            "location": "Marjorie P Hart",
+            "address": "2625 N. Orchard St., Chicago, IL 60614",
+            "url": [41.92977782631752, -87.64503929479577]
+        },
+        {
+            "location": "North",
+            "address": "1409 N. Ogden Ave., Chicago, IL 60610",
+            "url": [41.90681526573473, -87.6448185426727]
+        },
+        {
+            "location": "South",
+            "address": "2101 N. Fremont St., Chicago, IL 60614",
+            "url": [41.91994344145694, -87.650731415686]
+        }
+    ]
+}
