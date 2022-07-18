@@ -1,5 +1,5 @@
 {
-    "game1": [
+    "2022_09_01_1": [
         {
             "date": "09_01",
             "time": "9:30AM",
@@ -7,7 +7,7 @@
                 "U1",
                 "U4"
             ],
-            "location": "Katzenmaier"
+            "location":"Katzenmaier"
         },
         {
             "date": "09_01",
@@ -19,7 +19,7 @@
             "location": "Greenbay"
         }
     ],
-    "game2": [
+    "2022_09_08_2": [
         {
             "date": "09_08",
             "time": "9:30AM",
@@ -39,7 +39,7 @@
             "location": "Marjorie P Hart"
         }
     ],
-    "game3": [
+    "2022_09_15_3": [
         {
             "date": "09_15",
             "time": "9:30AM",
@@ -59,7 +59,7 @@
             "location": "AJ Katzenmaier"
         }
     ],
-    "game4": [
+    "2022_09_22_4": [
         {
             "date": "09_22",
             "time": "9:30AM",
@@ -79,7 +79,7 @@
             "location": "Howard A Yeager"
         }
     ],
-    "game5": [
+    "2022_10_06_5": [
         {
             "date": "10_06",
             "time": "9:30AM",
@@ -99,7 +99,7 @@
             "location": "South"
         }
     ],
-    "game6": [
+    "2022_10_13_6": [
         {
             "date": "10_13",
             "time": "9:30AM",
@@ -119,7 +119,7 @@
             "location": "Greenbay"
         }
     ],
-    "game7": [
+    "2022_10_20_7": [
         {
             "date": "10_20",
             "time": "9:30AM",
@@ -139,7 +139,7 @@
             "location": "Marjorie P Hart"
         }
     ],
-    "game8": [
+    "2022_10_27_8": [
         {
             "date": "10_27",
             "time": "9:30AM",

@@ -14,24 +14,15 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import App from './App';
 import {
   BrowserRouter,
-  Routes,
-  Route,
 } from "react-router-dom";
 import "./App.css";
-import Games from "./routes/games";
-import JSfetch from "./components/JSfetch"
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<App/>}>
-          <Route path='/games' element={<Games/>}></Route>
-          <Route path='/JSfetch' element={<JSfetch/>}></Route>
-        </Route>
-      </Routes>
+      <App></App>
   </BrowserRouter>
 );
 

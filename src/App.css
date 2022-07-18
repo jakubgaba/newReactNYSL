@@ -1,12 +1,21 @@
-.bro{
+.bro {
   color: green;
 }
-.activeStyle{
-  text-decoration:none;
+
+.activeStyle {
+  text-decoration: none;
   color: lightgreen;
   font-size: 20px;
 }
-.nActiveStyle{
-  text-decoration:none;
+
+.nActiveStyle {
+  text-decoration: none;
   color: black;
+  
+}
+#buttonMove{
+  transition: 2s;
+}
+#trigger{
+  transition: 2s;
 }
