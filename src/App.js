@@ -9,7 +9,7 @@ const App = () => {
     {
       path: '/',
       element: <div className="App">
-        <div className="container text-center">
+        <div className="container text-center bg-light">
           <h1 className="display-1">NYSL</h1>
           <p className="display-5">Northside Youth Soccer League</p>
           <nav
@@ -42,9 +42,8 @@ const App = () => {
       ]
     },
     {
-      path: 'games/:id',
-      element: <Gamesid />
-      
+      path: 'games/:location',
+      element: <Gamesid/>
     }
   ]);
   return routes;
