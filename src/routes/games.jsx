@@ -37,13 +37,20 @@ export default function games() {
           <div className="card card-body">
             <p className="d-grid gap-3">
               <button className="btn btn-secondary btn-info" data-bs-toggle="collapse" href="#collapseExample1" aria-expanded="false" aria-controls="collapseExample">
-                Game 1
+                1 Game
               </button>
             </p>
             <div className="collapse" id="collapseExample1">
               <div className="card card-body">
+                <p className="card-text font-monospace border-bottom">
+                Date : {data["2022_09_01_1"][0].date}<br/>
+                Time : {data["2022_09_01_1"][0].time}<br/>
+                Teams : {data["2022_09_01_1"][0].teams[0]} vs {data["2022_09_01_1"][0].teams[1]}<br/>
+                </p>
                 <p className="card-text font-monospace">
-                  
+                Date : {data["2022_09_01_1"][1].date}<br/>
+                Time : {data["2022_09_01_1"][1].time}<br/>
+                Teams : {data["2022_09_01_1"][1].teams[0]} vs {data["2022_09_01_1"][1].teams[1]}<br/>
                 </p>
               </div>
             </div>
@@ -51,7 +58,7 @@ export default function games() {
           <div className="card card-body">
             <p className="d-grid gap-3">
               <button className="btn btn-secondary btn-info" data-bs-toggle="collapse" href="#collapseExample2" aria-expanded="false" aria-controls="collapseExample">
-                Game 2
+                2 Game
               </button>
             </p>
             <div className="collapse" id="collapseExample2">
@@ -63,7 +70,7 @@ export default function games() {
           <div className="card card-body">
             <p className="d-grid gap-3">
               <button className="btn btn-secondary btn-info" data-bs-toggle="collapse" href="#collapseExample3" aria-expanded="false" aria-controls="collapseExample">
-                Game 3
+                3 Game 
               </button>
             </p>
             <div className="collapse" id="collapseExample3">
@@ -75,7 +82,7 @@ export default function games() {
           <div className="card card-body">
             <p className="d-grid gap-3">
               <button className="btn btn-secondary btn-info" data-bs-toggle="collapse" href="#collapseExample4" aria-expanded="false" aria-controls="collapseExample">
-                Game 4
+                4 Game 
               </button>
             </p>
             <div className="collapse" id="collapseExample4">
