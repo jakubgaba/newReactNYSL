@@ -10,7 +10,6 @@ const LoadingButton = () => (
 export default function games() {
   const [loading, data, error] = JSfetch("./gamesAll.json");
   let clicking = false;
-  console.log(data);
   console.log(error);
   if (loading) return <LoadingButton />;
   return (
@@ -38,7 +37,7 @@ export default function games() {
           <div className="card card-body">
             <p className="d-grid gap-3">
               <button className="btn btn-secondary btn-info" data-bs-toggle="collapse" href="#collapseExample1" aria-expanded="false" aria-controls="collapseExample">
-                1 Game
+              *** 1 Game ***
               </button>
             </p>
             <div className="collapse" id="collapseExample1">
@@ -63,7 +62,7 @@ export default function games() {
           <div className="card card-body">
             <p className="d-grid gap-3">
               <button className="btn btn-secondary btn-info" data-bs-toggle="collapse" href="#collapseExample2" aria-expanded="false" aria-controls="collapseExample">
-                2 Game
+              *** 2 Game ***
               </button>
             </p>
             <div className="collapse" id="collapseExample2">
@@ -73,14 +72,14 @@ export default function games() {
                   Time : {data["2022_09_08_2"][0].time}<br />
                   Teams : {data["2022_09_08_2"][0].teams[0]} vs {data["2022_09_08_2"][0].teams[1]}<br />
                   Location : {data["2022_09_08_2"][0].location}<br />
-                  <Link to={{ pathname: "/games/" + data["2022_09_01_1"][0].location }} ><button type="button" className="btn btn-outline-info mb-2 mt-2">More details</button></Link>
+                  <Link to={{ pathname: "/games/" + data["2022_09_08_2"][0].location }} ><button type="button" className="btn btn-outline-info mb-2 mt-2">More details</button></Link>
                 </p>
                 <p className="card-text font-monospace ">
                   Date : {data["2022_09_08_2"][1].date}<br />
                   Time : {data["2022_09_08_2"][1].time}<br />
                   Teams : {data["2022_09_08_2"][1].teams[0]} vs {data["2022_09_08_2"][1].teams[1]}<br />
                   Location : {data["2022_09_08_2"][1].location}<br />
-                  <Link to={{ pathname: "/games/" + data["2022_09_01_1"][0].location }} ><button type="button" className="btn btn-outline-info mb-2 mt-2">More details</button></Link>
+                  <Link to={{ pathname: "/games/" + data["2022_09_08_2"][1].location }} ><button type="button" className="btn btn-outline-info mb-2 mt-2">More details</button></Link>
                 </p>
               </div>
             </div>
@@ -88,7 +87,7 @@ export default function games() {
           <div className="card card-body">
             <p className="d-grid gap-3">
               <button className="btn btn-secondary btn-info" data-bs-toggle="collapse" href="#collapseExample3" aria-expanded="false" aria-controls="collapseExample">
-                3 Game
+              *** 3 Game ***
               </button>
             </p>
             <div className="collapse" id="collapseExample3">
@@ -98,14 +97,14 @@ export default function games() {
                   Time : {data["2022_09_15_3"][0].time}<br />
                   Teams : {data["2022_09_15_3"][0].teams[0]} vs {data["2022_09_15_3"][0].teams[1]}<br />
                   Location : {data["2022_09_15_3"][0].location}<br />
-                  <Link to={{ pathname: "/games/" + data["2022_09_01_1"][0].location }} ><button type="button" className="btn btn-outline-info mb-2 mt-2">More details</button></Link>
+                  <Link to={{ pathname: "/games/" + data["2022_09_15_3"][0].location }} ><button type="button" className="btn btn-outline-info mb-2 mt-2">More details</button></Link>
                 </p>
                 <p className="card-text font-monospace ">
                   Date : {data["2022_09_15_3"][1].date}<br />
                   Time : {data["2022_09_15_3"][1].time}<br />
                   Teams : {data["2022_09_15_3"][1].teams[0]} vs {data["2022_09_15_3"][1].teams[1]}<br />
                   Location : {data["2022_09_15_3"][1].location}<br />
-                  <Link to={{ pathname: "/games/" + data["2022_09_01_1"][0].location }} ><button type="button" className="btn btn-outline-info mb-2 mt-2">More details</button></Link>
+                  <Link to={{ pathname: "/games/" + data["2022_09_15_3"][1].location }} ><button type="button" className="btn btn-outline-info mb-2 mt-2">More details</button></Link>
                 </p>
               </div>
             </div>
@@ -113,7 +112,7 @@ export default function games() {
           <div className="card card-body">
             <p className="d-grid gap-3">
               <button className="btn btn-secondary btn-info" data-bs-toggle="collapse" href="#collapseExample4" aria-expanded="false" aria-controls="collapseExample">
-                4 Game
+              *** 4 Game ***
               </button>
             </p>
             <div className="collapse" id="collapseExample4">
@@ -123,14 +122,14 @@ export default function games() {
                   Time : {data["2022_09_22_4"][0].time}<br />
                   Teams : {data["2022_09_22_4"][0].teams[0]} vs {data["2022_09_22_4"][0].teams[1]}<br />
                   Location : {data["2022_09_22_4"][0].location}<br />
-                  <Link to={{ pathname: "/games/" + data["2022_09_01_1"][0].location }} ><button type="button" className="btn btn-outline-info mb-2 mt-2">More details</button></Link>
+                  <Link to={{ pathname: "/games/" + data["2022_09_22_4"][0].location }} ><button type="button" className="btn btn-outline-info mb-2 mt-2">More details</button></Link>
                 </p>
                 <p className="card-text font-monospace ">
                   Date : {data["2022_09_22_4"][1].date}<br />
                   Time : {data["2022_09_22_4"][1].time}<br />
                   Teams : {data["2022_09_22_4"][1].teams[0]} vs {data["2022_09_22_4"][1].teams[1]}<br />
                   Location : {data["2022_09_22_4"][1].location}<br />
-                  <Link to={{ pathname: "/games/" + data["2022_09_01_1"][0].location }} ><button type="button" className="btn btn-outline-info mb-2 mt-2">More details</button></Link>
+                  <Link to={{ pathname: "/games/" + data["2022_09_22_4"][1].location }} ><button type="button" className="btn btn-outline-info mb-2 mt-2">More details</button></Link>
                 </p>
               </div>
             </div>
@@ -138,7 +137,7 @@ export default function games() {
           <div className="card card-body">
             <p className="d-grid gap-3">
               <button className="btn btn-secondary btn-info" data-bs-toggle="collapse" href="#collapseExample5" aria-expanded="false" aria-controls="collapseExample">
-                Game 5
+              *** 5 Game ***
               </button>
             </p>
             <div className="collapse" id="collapseExample5">
@@ -148,14 +147,14 @@ export default function games() {
                   Time : {data["2022_10_06_5"][0].time}<br />
                   Teams : {data["2022_10_06_5"][0].teams[0]} vs {data["2022_10_06_5"][0].teams[1]}<br />
                   Location : {data["2022_10_06_5"][0].location}<br />
-                  <Link to={{ pathname: "/games/" + data["2022_09_01_1"][0].location }} ><button type="button" className="btn btn-outline-info mb-2 mt-2">More details</button></Link>
+                  <Link to={{ pathname: "/games/" + data["2022_10_06_5"][0].location }} ><button type="button" className="btn btn-outline-info mb-2 mt-2">More details</button></Link>
                 </p>
                 <p className="card-text font-monospace ">
                   Date : {data["2022_10_06_5"][1].date}<br />
                   Time : {data["2022_10_06_5"][1].time}<br />
                   Teams : {data["2022_10_06_5"][1].teams[0]} vs {data["2022_10_06_5"][1].teams[1]}<br />
                   Location : {data["2022_10_06_5"][1].location}<br />
-                  <Link to={{ pathname: "/games/" + data["2022_09_01_1"][0].location }} ><button type="button" className="btn btn-outline-info mb-2 mt-2">More details</button></Link>
+                  <Link to={{ pathname: "/games/" + data["2022_10_06_5"][1].location }} ><button type="button" className="btn btn-outline-info mb-2 mt-2">More details</button></Link>
                 </p>
               </div>
             </div>
@@ -163,7 +162,7 @@ export default function games() {
           <div className="card card-body">
             <p className="d-grid gap-3">
               <button className="btn btn-secondary btn-info" data-bs-toggle="collapse" href="#collapseExample6" aria-expanded="false" aria-controls="collapseExample">
-                Game 6
+              *** 6 Game ***
               </button>
             </p>
             <div className="collapse" id="collapseExample6">
@@ -173,14 +172,14 @@ export default function games() {
                   Time : {data["2022_10_13_6"][0].time}<br />
                   Teams : {data["2022_10_13_6"][0].teams[0]} vs {data["2022_10_13_6"][0].teams[1]}<br />
                   Location : {data["2022_10_13_6"][0].location}<br />
-                  <Link to={{ pathname: "/games/" + data["2022_09_01_1"][0].location }} ><button type="button" className="btn btn-outline-info mb-2 mt-2">More details</button></Link>
+                  <Link to={{ pathname: "/games/" + data["2022_10_13_6"][0].location }} ><button type="button" className="btn btn-outline-info mb-2 mt-2">More details</button></Link>
                 </p>
                 <p className="card-text font-monospace ">
                   Date : {data["2022_10_13_6"][1].date}<br />
                   Time : {data["2022_10_13_6"][1].time}<br />
                   Teams : {data["2022_10_13_6"][1].teams[0]} vs {data["2022_10_13_6"][1].teams[1]}<br />
                   Location : {data["2022_10_13_6"][1].location}<br />
-                  <Link to={{ pathname: "/games/" + data["2022_09_01_1"][0].location }} ><button type="button" className="btn btn-outline-info mb-2 mt-2">More details</button></Link>
+                  <Link to={{ pathname: "/games/" + data["2022_10_13_6"][1].location }} ><button type="button" className="btn btn-outline-info mb-2 mt-2">More details</button></Link>
                 </p>
               </div>
             </div>
@@ -188,7 +187,7 @@ export default function games() {
           <div className="card card-body">
             <p className="d-grid gap-3">
               <button className="btn btn-secondary btn-info" data-bs-toggle="collapse" href="#collapseExample7" aria-expanded="false" aria-controls="collapseExample">
-                Game 7
+              *** 7 Game ***
               </button>
             </p>
             <div className="collapse" id="collapseExample7">
@@ -198,14 +197,14 @@ export default function games() {
                   Time : {data["2022_10_20_7"][0].time}<br />
                   Teams : {data["2022_10_20_7"][0].teams[0]} vs {data["2022_10_20_7"][0].teams[1]}<br />
                   Location : {data["2022_10_20_7"][0].location}<br />
-                  <Link to={{ pathname: "/games/" + data["2022_09_01_1"][0].location }} ><button type="button" className="btn btn-outline-info mb-2 mt-2">More details</button></Link>
+                  <Link to={{ pathname: "/games/" + data["2022_10_20_7"][0].location }} ><button type="button" className="btn btn-outline-info mb-2 mt-2">More details</button></Link>
                 </p>
                 <p className="card-text font-monospace ">
                   Date : {data["2022_10_20_7"][1].date}<br />
                   Time : {data["2022_10_20_7"][1].time}<br />
                   Teams : {data["2022_10_20_7"][1].teams[0]} vs {data["2022_10_20_7"][1].teams[1]}<br />
                   Location : {data["2022_10_20_7"][1].location}<br />
-                  <Link to={{ pathname: "/games/" + data["2022_09_01_1"][0].location }} ><button type="button" className="btn btn-outline-info mb-2 mt-2">More details</button></Link>
+                  <Link to={{ pathname: "/games/" + data["2022_10_20_7"][1].location }} ><button type="button" className="btn btn-outline-info mb-2 mt-2">More details</button></Link>
                 </p>
               </div>
             </div>
@@ -213,7 +212,7 @@ export default function games() {
           <div className="card card-body">
             <p className="d-grid gap-3">
               <button className="btn btn-secondary btn-info" data-bs-toggle="collapse" href="#collapseExample8" aria-expanded="false" aria-controls="collapseExample">
-                Game 8
+               *** 8 Game ***
               </button>
             </p>
             <div className="collapse" id="collapseExample8">
@@ -223,14 +222,14 @@ export default function games() {
                   Time : {data["2022_10_27_8"][0].time}<br />
                   Teams : {data["2022_10_27_8"][0].teams[0]} vs {data["2022_10_27_8"][0].teams[1]}<br />
                   Location : {data["2022_10_27_8"][0].location}<br />
-                  <Link to={{ pathname: "/games/" + data["2022_09_01_1"][0].location }} ><button type="button" className="btn btn-outline-info mb-2 mt-2">More details</button></Link>
+                  <Link to={{ pathname: "/games/" + data["2022_10_27_8"][0].location }} ><button type="button" className="btn btn-outline-info mb-2 mt-2">More details</button></Link>
                 </p>
                 <p className="card-text font-monospace ">
                   Date : {data["2022_10_27_8"][1].date}<br />
                   Time : {data["2022_10_27_8"][1].time}<br />
                   Teams : {data["2022_10_27_8"][1].teams[0]} vs {data["2022_10_27_8"][1].teams[1]}<br />
                   Location : {data["2022_10_27_8"][1].location}<br />
-                  <Link to={{ pathname: "/games/" + data["2022_09_01_1"][0].location }} ><button type="button" className="btn btn-outline-info mb-2 mt-2">More details</button></Link>
+                  <Link to={{ pathname: "/games/" + data["2022_10_27_8"][1].location }} ><button type="button" className="btn btn-outline-info mb-2 mt-2">More details</button></Link>
                 </p>
               </div>
             </div>

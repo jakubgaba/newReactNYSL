@@ -1,4 +1,4 @@
-import { Outlet, useRoutes, NavLink} from 'react-router-dom';
+import { Outlet, useRoutes, NavLink } from 'react-router-dom';
 import "./App.css";
 import Games from "./routes/games";
 import Gamesid from "./routes/Gamesid";
@@ -9,7 +9,7 @@ const App = () => {
     {
       path: '/',
       element: <div className="App">
-        <div className="container text-center bg-light">
+        <div className="container text-center">
           <h1 className="display-1">NYSL</h1>
           <p className="display-5">Northside Youth Soccer League</p>
           <nav
@@ -38,12 +38,12 @@ const App = () => {
         {
           path: 'games',
           element: <Games />
+        },
+        {
+          path: 'games/:location',
+          element: <Gamesid />
         }
       ]
-    },
-    {
-      path: 'games/:location',
-      element: <Gamesid/>
     }
   ]);
   return routes;
