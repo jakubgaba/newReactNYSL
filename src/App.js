@@ -2,9 +2,24 @@ import { Outlet, useRoutes, NavLink } from 'react-router-dom';
 import "./App.css";
 import Games from "./routes/games";
 import Gamesid from "./routes/Gamesid";
+import "firebase/auth";
+import Login from './Utilities/login';
+import Logout from './Utilities/logout';
+import firebase from 'firebase/compat/app';
+import { useState, useEffect } from 'react';
 
 
 const App = () => {
+
+  const [user, setUser] = useState(null);
+  useEffect(() => {
+    firebase.auth().onAuthStateChanged(user => {
+      setUser(user);
+    })
+  }, [])
+  console.log(user);
+  
+
   let routes = useRoutes([
     {
       path: '/',
@@ -31,6 +46,9 @@ const App = () => {
               </ul>
             </div>
           </nav>
+          <br></br>
+          <Login />
+          <Logout/>
           <Outlet />
         </div>
       </div>,
