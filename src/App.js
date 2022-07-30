@@ -18,7 +18,7 @@ const App = () => {
     })
   }, [])
   console.log(user);
-  
+
 
   let routes = useRoutes([
     {
@@ -43,12 +43,19 @@ const App = () => {
                   <NavLink to="/" className={({ isActive }) => isActive ? "activeStyle" : "nActiveStyle"}>Main</NavLink></li>
                 <li className="dropdown-item">
                   <NavLink to="/games" className={({ isActive }) => isActive ? "activeStyle" : "nActiveStyle"}>Schedule</NavLink></li>
+                <li className="dropdown-item">
+                  {user ? <Logout /> : <Login />}</li>
               </ul>
             </div>
           </nav>
           <br></br>
-          <Login />
-          <Logout/>
+          <div className="Welcome">
+            {user ?
+              <p className="text-center " style={{marginTop: "25%"}}>Welcome {user.displayName}
+                <img src={user.photoURL} className="rounded mx-auto d-block" alt="..."></img>
+              </p>
+              : "You are not logged "}
+          </div>
           <Outlet />
         </div>
       </div>,
