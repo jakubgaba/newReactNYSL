@@ -12,7 +12,8 @@ import { useState, useEffect } from 'react';
 function fadeOut(){
   setTimeout(() => {
     const elem = document.getElementById("loggedIn");
-    elem.style.padding = "0%";
+    elem.style.padding = "0px";
+    elem.style.margin = "0px";
   }, 2000);
 }
 
@@ -57,7 +58,7 @@ const App = () => {
             </div>
             {user ? <Logout /> : <Login />}
             {user ?
-              <div>
+              <div style={{marginTop: "5%"}}>
                 <div className="alert alert-success" id='loggedIn' role="alert">
                   You are logged in!
                   {fadeOut()}
@@ -66,7 +67,7 @@ const App = () => {
                   <img src={user.photoURL} alt="userPhoto"></img>
                 </div>
               </div>
-              : <div className="alert alert-danger" role="alert">
+              : <div style={{marginTop: "5%"}}className="alert alert-danger" role="alert">
                 You are not logged in !
               </div>}
           </nav>
