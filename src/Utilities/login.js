@@ -5,7 +5,7 @@ import '../App.css';
 const Login = () => {
   return (
     <div>
-      <button className="button" onClick={signInWithGoogle}><i className="fab fa-google"></i>Sign in !</button>
+      <button className="btn btn-outline-success btn-lg" onClick={signInWithGoogle}>Sign in !</button>
     </div>
   )
 }

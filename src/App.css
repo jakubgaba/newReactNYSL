@@ -7,11 +7,39 @@
 .nActiveStyle {
   text-decoration: none;
   color: black;
-  
+
 }
-#buttonMove{
+
+#buttonMove {
   transition: 2s;
 }
-#trigger{
+
+#trigger {
   transition: 2s;
+}
+
+.Welcome img {
+  border-radius: 25px;
+  animation: slower 2s ease forwards;
+}
+@keyframes slower {
+  from {
+    width: 0px;
+  }
+
+  to {
+    width: 130px;
+  }
+}
+#loggedIn{
+  transition: 2s;
+  animation: dissapear 2s ease forwards;
+}
+@keyframes dissapear {
+  from {
+    opacity: 100%;
+  }
+  to {
+    opacity: 0%;
+  }
 }

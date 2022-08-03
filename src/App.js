@@ -9,10 +9,18 @@ import firebase from 'firebase/compat/app';
 import { useState, useEffect } from 'react';
 
 
+function fadeOut(){
+  setTimeout(() => {
+    const elem = document.getElementById("loggedIn");
+    elem.style.padding = "0%";
+  }, 2000);
+}
+
 const App = () => {
 
   const [user, setUser] = useState(null);
   useEffect(() => {
+    
     firebase.auth().onAuthStateChanged(user => {
       setUser(user);
     })
@@ -34,7 +42,7 @@ const App = () => {
               paddingBottom: "1rem",
             }}
           >
-            <div className="btn-group ">
+            <div className="btn-group" style={{ paddingBottom: "10px" }}>
               <button className="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" >
                 Scrool pages
               </button>
@@ -44,18 +52,25 @@ const App = () => {
                 <li className="dropdown-item">
                   <NavLink to="/games" className={({ isActive }) => isActive ? "activeStyle" : "nActiveStyle"}>Schedule</NavLink></li>
                 <li className="dropdown-item">
-                  {user ? <Logout /> : <Login />}</li>
+                </li>
               </ul>
             </div>
+            {user ? <Logout /> : <Login />}
+            {user ?
+              <div>
+                <div className="alert alert-success" id='loggedIn' role="alert">
+                  You are logged in!
+                  {fadeOut()}
+                </div>
+                <div className="Welcome">
+                  <img src={user.photoURL} alt="userPhoto"></img>
+                </div>
+              </div>
+              : <div className="alert alert-danger" role="alert">
+                You are not logged in !
+              </div>}
           </nav>
           <br></br>
-          <div className="Welcome">
-            {user ?
-              <p className="text-center " style={{marginTop: "25%"}}>Welcome {user.displayName}
-                <img src={user.photoURL} className="rounded mx-auto d-block" alt="..."></img>
-              </p>
-              : "You are not logged "}
-          </div>
           <Outlet />
         </div>
       </div>,
@@ -63,6 +78,7 @@ const App = () => {
         {
           path: 'games',
           element: <Games />
+
         },
         {
           path: 'games/:location',
