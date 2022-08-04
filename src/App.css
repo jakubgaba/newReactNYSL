@@ -23,12 +23,15 @@
   animation: slower 2s ease forwards;
 }
 @keyframes slower {
-  from {
+  0% {
     width: 0px;
   }
 
-  to {
+  50% {
     width: 130px;
+  }
+  100%{
+    width: 100px;
   }
 }
 #loggedIn{

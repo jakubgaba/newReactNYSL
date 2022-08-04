@@ -7,26 +7,27 @@ import Login from './Utilities/login';
 import Logout from './Utilities/logout';
 import firebase from 'firebase/compat/app';
 import { useState, useEffect } from 'react';
-
-
-function fadeOut(){
-  setTimeout(() => {
-    const elem = document.getElementById("loggedIn");
-    elem.style.padding = "0px";
-    elem.style.margin = "0px";
-  }, 2000);
-}
+import Home from './routes/home';
 
 const App = () => {
 
   const [user, setUser] = useState(null);
+  const [hide, setHide] = useState(null);
+  
   useEffect(() => {
-    
     firebase.auth().onAuthStateChanged(user => {
       setUser(user);
     })
-  }, [])
-  console.log(user);
+    if (user !== null) {
+      setTimeout(() => {
+        setHide(document.getElementById("loggedIn").style.padding = "0px");
+        setTimeout(() => {
+          setHide(document.getElementById("loggedIn").style.display = "none");
+        }, 2000);
+      }, 2000);
+    }
+  }, [user])
+  console.log("Hide element activated: " + hide);
 
 
   let routes = useRoutes([
@@ -58,16 +59,16 @@ const App = () => {
             </div>
             {user ? <Logout /> : <Login />}
             {user ?
-              <div style={{marginTop: "5%"}}>
+              <div style={{ marginTop: "5%" }}>
                 <div className="alert alert-success" id='loggedIn' role="alert">
                   You are logged in!
-                  {fadeOut()}
+
                 </div>
                 <div className="Welcome">
                   <img src={user.photoURL} alt="userPhoto"></img>
                 </div>
               </div>
-              : <div style={{marginTop: "5%"}}className="alert alert-danger" role="alert">
+              : <div style={{ marginTop: "5%" }} className="alert alert-danger" role="alert">
                 You are not logged in !
               </div>}
           </nav>
@@ -76,6 +77,10 @@ const App = () => {
         </div>
       </div>,
       children: [
+        {
+          path: '/',
+          element: <Home />
+        },
         {
           path: 'games',
           element: <Games />
