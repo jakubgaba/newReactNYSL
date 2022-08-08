@@ -46,3 +46,34 @@
     opacity: 0%;
   }
 }
+#showEmYes{
+  transition: 2s;
+  animation: appear 5s ease forwards;
+  margin-top: 20%;
+}
+@keyframes appear {
+  from {
+    opacity: 0%;
+    
+  }
+  to {
+    opacity: 100%;
+    margin-top: 5%;
+  }
+}
+#generalInforamtion{
+  border: 2px solid black;
+  margin-top: 10%;
+  text-align: left;
+}
+.a{
+transition: 2s;
+animation: flip 5s infinite;
+
+}
+@keyframes flip {
+  0%,
+  80% {
+    transform: translateX(20px)
+  }
+}

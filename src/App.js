@@ -7,13 +7,13 @@ import Login from './Utilities/login';
 import Logout from './Utilities/logout';
 import firebase from 'firebase/compat/app';
 import { useState, useEffect } from 'react';
-import Home from './routes/home';
-
+import Home from './routes/Home';
+import ChatRoom from './routes/chatRoom';
 const App = () => {
 
   const [user, setUser] = useState(null);
   const [hide, setHide] = useState(null);
-  
+
   useEffect(() => {
     firebase.auth().onAuthStateChanged(user => {
       setUser(user);
@@ -53,8 +53,10 @@ const App = () => {
                   <NavLink to="/" className={({ isActive }) => isActive ? "activeStyle" : "nActiveStyle"}>Main</NavLink></li>
                 <li className="dropdown-item">
                   <NavLink to="/games" className={({ isActive }) => isActive ? "activeStyle" : "nActiveStyle"}>Schedule</NavLink></li>
-                <li className="dropdown-item">
-                </li>
+                {user ? <li className="dropdown-item">
+                  <NavLink to="/chatRoom" className={({ isActive }) => isActive ? "activeStyle" : "nActiveStyle"}>Chat room</NavLink></li>
+                  :
+                  ""}
               </ul>
             </div>
             {user ? <Logout /> : <Login />}
@@ -65,7 +67,7 @@ const App = () => {
 
                 </div>
                 <div className="Welcome">
-                  <img src={user.photoURL} alt="userPhoto"></img>
+                  <img src={user.photoURL} alt="Google"></img>
                 </div>
               </div>
               : <div style={{ marginTop: "5%" }} className="alert alert-danger" role="alert">
@@ -89,6 +91,10 @@ const App = () => {
         {
           path: 'games/:location',
           element: <Gamesid />
+        },
+        {
+          path: 'chatRoom',
+          element: <ChatRoom />
         }
       ]
     }
