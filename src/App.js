@@ -33,51 +33,57 @@ const App = () => {
   let routes = useRoutes([
     {
       path: '/',
-      element: <div className="App">
-        <div className="container text-center">
-          <h1 className="display-1">NYSL</h1>
-          <p className="display-5">Northside Youth Soccer League</p>
-          <nav
-            style={{
-              textAlign: "center",
-              borderBottom: "solid 1px",
-              paddingBottom: "1rem",
-            }}
-          >
-            <div className="btn-group" style={{ paddingBottom: "10px" }}>
-              <button className="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" >
-                Scrool pages
-              </button>
-              <ul className="dropdown-menu">
-                <li className="dropdown-item">
-                  <NavLink to="/" className={({ isActive }) => isActive ? "activeStyle" : "nActiveStyle"}>Main</NavLink></li>
-                <li className="dropdown-item">
-                  <NavLink to="/games" className={({ isActive }) => isActive ? "activeStyle" : "nActiveStyle"}>Schedule</NavLink></li>
-                {user ? <li className="dropdown-item">
-                  <NavLink to="/chatRoom" className={({ isActive }) => isActive ? "activeStyle" : "nActiveStyle"}>Chat room</NavLink></li>
-                  :
-                  ""}
-              </ul>
-            </div>
-            {user ? <Logout /> : <Login />}
-            {user ?
-              <div style={{ marginTop: "5%" }}>
-                <div className="alert alert-success" id='loggedIn' role="alert">
-                  You are logged in!
-
-                </div>
-                <div className="Welcome">
-                  <img src={user.photoURL} alt="Google"></img>
-                </div>
+      element:
+        <div className="App">
+          <div className="container text-center">
+            <h1 className="display-1">NYSL</h1>
+            <p className="display-5">Northside Youth Soccer League</p>
+            <nav
+              style={{
+                textAlign: "center",
+                borderBottom: "solid 1px",
+                paddingBottom: "1rem",
+              }}
+            >
+              <div className="btn-group" style={{ paddingBottom: "10px" }}>
+                <button className="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" >
+                  Scrool pages
+                </button>
+                <ul className="dropdown-menu">
+                  <li className="dropdown-item">
+                    <NavLink to="/" className={({ isActive }) => isActive ? "activeStyle" : "nActiveStyle"}>Main</NavLink></li>
+                  <li className="dropdown-item">
+                    <NavLink to="/games" className={({ isActive }) => isActive ? "activeStyle" : "nActiveStyle"}>Schedule</NavLink></li>
+                  {user ? <li className="dropdown-item">
+                    <NavLink to="/chatRoom" className={({ isActive }) => isActive ? "activeStyle" : "nActiveStyle"}>Chat room</NavLink></li>
+                    :
+                    ""}
+                </ul>
               </div>
-              : <div style={{ marginTop: "5%" }} className="alert alert-danger" role="alert">
-                You are not logged in !
-              </div>}
-          </nav>
-          <br></br>
-          <Outlet />
-        </div>
-      </div>,
+              {user ? <Logout /> : <Login />}
+              {user ?
+                <div style={{ marginTop: "5%" }}>
+                  <div className="alert alert-success" id='loggedIn' role="alert">
+                    You are logged in!
+
+                  </div>
+                  <div className="Welcome">
+                    <img src={user.photoURL} alt="Google"></img>
+                  </div>
+                </div>
+                : <div style={{ marginTop: "5%" }} className="alert alert-danger" role="alert">
+                  You are not logged in !
+                </div>}
+            </nav>
+            <br></br>
+            <Outlet />
+          </div>
+          <footer id="sticky-footer" className="py-1 fixed-bottom bg-secondary text-white-50 w-100">
+            <div className="container text-center">
+              <small>Copyright &copy; NYSL </small>
+            </div>
+          </footer>
+        </div>,
       children: [
         {
           path: '/',

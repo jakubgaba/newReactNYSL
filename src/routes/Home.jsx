@@ -15,14 +15,14 @@ const Home = () => {
             {user ?
                 <div>
                     <div className="fs-1 text-decoration-underline" id='showEmYes'>Hello {user.displayName}</div>
-                    
-                    </div>
-                    :
-                    <div id='showEmNo'>
-                    Nothing is there
-                    </div>
-            }
+
                 </div>
+                :
+                <div id='showEmNo'>
+                    Nothing is there
+                </div>
+            }
+        </div>
     )
 }
-            export default Home;
+export default Home;
