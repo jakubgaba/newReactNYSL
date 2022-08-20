@@ -1,0 +1,34 @@
+{
+    "locationdata": [
+        {
+            "location": "Katzenmaier",
+            "address": "24 W. Walton St., Chicago, IL 60610",
+            "url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.654246110992!2d-87.63123908366026!3d41.9002923792203!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd34e07f6bac3%3A0x68a82e5d59952c86!2s24%20W%20Walton%20St%2C%20Chicago%2C%20IL%2060610%2C%20USA!5e0!3m2!1sen!2sch!4v1658408066245!5m2!1sen!2sch"
+        },
+        {
+            "location": "Greenbay",
+            "address": "1734 N. Orleans St., Chicago, IL 60614",
+            "url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.0258843688466!2d-87.64002798365998!3d41.913802279219595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd34073f306a3%3A0x9e1726bbf8f23f0e!2s1734%20N%20Orleans%20St%2C%20Chicago%2C%20IL%2060614%2C%20Spojen%C3%A9%20st%C3%A1ty%20americk%C3%A9!5e0!3m2!1scs!2sch!4v1658604204543!5m2!1scs!2sch"
+        },
+        {
+            "location": "Howard A Yeager",
+            "address": "2245 N. Southport Ave., Chicago, IL 60614",
+            "url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.5907823158645!2d-87.66532268410604!3d41.92315497921866!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd2e37f9b8d2d%3A0x62ad8b907dd755d6!2s2245%20N%20Southport%20Ave%2C%20Chicago%2C%20IL%2060614%2C%20Spojen%C3%A9%20st%C3%A1ty%20americk%C3%A9!5e0!3m2!1scs!2sch!4v1658604263842!5m2!1scs!2sch" 
+        },
+        {
+            "location": "Marjorie P Hart",
+            "address": "2625 N. Orchard St., Chicago, IL 60614",
+            "url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.5907823158645!2d-87.66532268410604!3d41.92315497921866!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd30f2630e551%3A0x3e719e44a5cef714!2s2625%20N%20Orchard%20St%2C%20Chicago%2C%20IL%2060614%2C%20Spojen%C3%A9%20st%C3%A1ty%20americk%C3%A9!5e0!3m2!1scs!2sch!4v1658604290634!5m2!1scs!2sch" 
+        },
+        {
+            "location": "North",
+            "address": "1409 N. Ogden Ave., Chicago, IL 60610",
+            "url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.3560787008396!2d-87.64766168410645!3d41.9067034792199!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd33a674ca85d%3A0x9940c7163c4950c5!2s1409%20N%20Ogden%20Ave%2C%20Chicago%2C%20IL%2060610%2C%20Spojen%C3%A9%20st%C3%A1ty%20americk%C3%A9!5e0!3m2!1scs!2sch!4v1658604312342!5m2!1scs!2sch" 
+        },
+        {
+            "location": "South",
+            "address": "2101 N. Fremont St., Chicago, IL 60614",
+            "url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.747624866009!2d-87.65351018410615!3d41.919783779218974!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd3196fb41dc7%3A0x970be7f7d6336df5!2s2101%20N%20Fremont%20St%2C%20Chicago%2C%20IL%2060614%2C%20Spojen%C3%A9%20st%C3%A1ty%20americk%C3%A9!5e0!3m2!1scs!2sch!4v1658604422691!5m2!1scs!2sch" 
+        }
+    ]
+}

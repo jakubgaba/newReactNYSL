@@ -1,0 +1,79 @@
+.activeStyle {
+  text-decoration: none;
+  color: lightgreen;
+  font-size: 20px;
+}
+
+.nActiveStyle {
+  text-decoration: none;
+  color: black;
+
+}
+
+#buttonMove {
+  transition: 2s;
+}
+
+#trigger {
+  transition: 2s;
+}
+
+.Welcome img {
+  border-radius: 25px;
+  animation: slower 2s ease forwards;
+}
+@keyframes slower {
+  0% {
+    width: 0px;
+  }
+
+  50% {
+    width: 130px;
+  }
+  100%{
+    width: 100px;
+  }
+}
+#loggedIn{
+  transition: 2s;
+  animation: dissapear 2s ease forwards;
+}
+@keyframes dissapear {
+  from {
+    opacity: 100%;
+  }
+  to {
+    opacity: 0%;
+  }
+}
+#showEmYes{
+  transition: 2s;
+  animation: appear 5s ease forwards;
+  margin-top: 20%;
+}
+@keyframes appear {
+  from {
+    opacity: 0%;
+    
+  }
+  to {
+    opacity: 100%;
+    margin-top: 5%;
+  }
+}
+#generalInforamtion{
+  border: 2px solid black;
+  margin-top: 10%;
+  text-align: left;
+}
+.a{
+transition: 2s;
+animation: flip 5s infinite;
+
+}
+@keyframes flip {
+  0%,
+  80% {
+    transform: translateX(20px)
+  }
+}
