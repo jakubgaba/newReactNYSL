@@ -1,5 +1,6 @@
 import { useList } from 'react-firebase-hooks/database';
 import { getDatabase, ref } from "firebase/database";
+import "../App.css";
 const ChatRoom = () => {
     const dbRef = getDatabase();
     const [snapshots, loading, error] = useList(ref(dbRef, 'messages'), 'value');
@@ -16,13 +17,39 @@ const ChatRoom = () => {
          );
         })
     ))
-    console.log(textData);
+    
     return (
-        <div >
-            <div className='h1'>WELCOME TO CHAT ROOM</div>
-            {
-            textData
-            }
+        <div>
+            <div className='first'>
+                <div className='second'>
+                <div>Bla</div>
+                <div>Bla</div>
+                <div>Bla</div>
+                <div>Bla</div>
+                <div>Bla</div>
+                <div>Bla</div>
+                <div>Bla</div>
+                <div>Bla</div>
+                <div>Bla</div>
+                <div>Bla</div>
+                <div>Bla</div>
+                <div>Bla</div>
+                <div>Bla</div>
+                <div>Bla</div>
+                <div>Bla</div>
+                <div>Bla</div>
+                <div>Bla</div>
+                <div>Bla</div>
+                <div>Bla</div>
+                <div>Bla</div>
+                <div>Bladddd</div>
+                <div>Bla</div>
+                <div>Bla</div>
+                <div>Bla</div>
+                <div>Bla</div>
+                <div>Bla</div>
+                </div>
+            </div>
         </div>
     )
 }
