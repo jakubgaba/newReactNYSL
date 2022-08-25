@@ -1,20 +1,18 @@
-import { useList } from 'react-firebase-hooks/database';
+import { useObject } from 'react-firebase-hooks/database';
 import { getDatabase, ref } from "firebase/database";
 import "../App.css";
 import { useParams, useNavigate } from "react-router-dom";
 
 
 
-
 const ChatRoom = () => {
     const dbRef = getDatabase();
-    const [snapshots, loading, error] = useList(ref(dbRef, 'messages'), 'value');
+    const [snapshots, loading, error] = useObject(ref(dbRef, 'messages'), 'value');
     const navigate = useNavigate();
     let { game } = useParams();
 
 
 
-    let textData = "";
     
     // snapshots.map(snapshot => (
     //     snapshot.forEach(childSnap => {
@@ -23,7 +21,13 @@ const ChatRoom = () => {
     //         );
     //     })
     // ))
+
+    // snapshots[0].val().forEach(function(user) {
+    //     console.log(user);
+    //   });
+
     console.log(Number(game));
+    console.log(snapshots.val().game_1);
     if (loading) return "Data are loading"
     if (error) return error.message
     return (
@@ -31,31 +35,6 @@ const ChatRoom = () => {
             <div className='first'>
                 <div className='second'>
                    
-                    <div>Bla</div>
-                    <div>Bla</div>
-                    <div>Bla</div>
-                    <div>Bla</div>
-                    <div>Bla</div>
-                    <div>Bla</div>
-                    <div>Bla</div>
-                    <div>Bla</div>
-                    <div>Bla</div>
-                    <div>Bla</div>
-                    <div>Bla</div>
-                    <div>Bla</div>
-                    <div>Bla</div>
-                    <div>Bla</div>
-                    <div>Bla</div>
-                    <div>Bla</div>
-                    <div>Bla</div>
-                    <div>Bla</div>
-                    <div>Bla</div>
-                    <div>Bladddd</div>
-                    <div>Bla</div>
-                    <div>Bla</div>
-                    <div>Bla</div>
-                    <div>Bla</div>
-                    <div>Bla</div>
                 </div>
 
             </div>

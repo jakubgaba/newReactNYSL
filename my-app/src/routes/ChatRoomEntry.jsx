@@ -20,22 +20,22 @@ const ChatRoomEntry = () => {
         <div>
             <div>Choose your game
                 <div style={{display:"inline-flex"}}>
-                    <div class="card my-1 bg-light" style={{ width: "50%" }}>
-                        <img src={game} class="card-img-top w-50 mx-auto" alt="gameIMG" />
-                        <div class="card-body">
-                            <h5 class="card-title">Game 1</h5>
-                            <p class="card-text ">Chat board for first team</p>
-                            <p class="card-text text-light bg-dark">Date 09.01</p>
-                            <Link to={{ pathname: "/chatRoomEntry/0" }}><button class="btn btn-primary">Entry</button></Link>
+                    <div className="card my-1 bg-light" style={{ width: "50%" }}>
+                        <img src={game} className="card-img-top w-50 mx-auto" alt="gameIMG" />
+                        <div className="card-body">
+                            <h5 className="card-title">Game 1</h5>
+                            <p className="card-text ">Chat board for first team</p>
+                            <p className="card-text text-light bg-dark">Date 09.01</p>
+                            <Link to={{ pathname: "/chatRoomEntry/0" }}><button className="btn btn-primary">Entry</button></Link>
                         </div>
                     </div>
-                    <div class="card my-1 bg-light" style={{ width: "50%" }}>
-                        <img src={game} class="card-img-top w-50 mx-auto" alt="gameIMG" />
-                        <div class="card-body">
-                            <h5 class="card-title">Game 2</h5>
-                            <p class="card-text ">Chat board for second team</p>
-                            <p class="card-text text-light bg-dark">Date 09.01</p>
-                            <Link to={{ pathname: "/chatRoomEntry/1" }}><button class="btn btn-primary">Entry</button></Link>
+                    <div className="card my-1 bg-light" style={{ width: "50%" }}>
+                        <img src={game} className="card-img-top w-50 mx-auto" alt="gameIMG" />
+                        <div className="card-body">
+                            <h5 className="card-title">Game 2</h5>
+                            <p className="card-text ">Chat board for second team</p>
+                            <p className="card-text text-light bg-dark">Date 09.01</p>
+                            <Link to={{ pathname: "/chatRoomEntry/1" }}><button className="btn btn-primary">Entry</button></Link>
                         </div>
                     </div>
                 </div>
