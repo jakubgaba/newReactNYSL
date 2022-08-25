@@ -89,13 +89,21 @@
     transform: translateX(20px)
   }
 }
+#textCarousel{
+  height: 152.5px;
+  text-align: center;
+  font-weight: 700;
+  display: flex;
+  justify-content: center; /* align horizontal */
+  align-items: center; /* align vertical */
+}
 
 .first {
   display: flex;
   flex-direction: column;
   border: 30px solid transparent;
   border-image-source:
-    url(darkThemeBorder.png);
+    url(images/darkThemeBorder.png);
   border-image-repeat: stretch;
   border-image-slice: 40;
   background-color: #D3D3D3;
@@ -124,3 +132,4 @@
 .second::-webkit-scrollbar-thumb:hover {
   background: rgb(54, 56, 58);
 }
+

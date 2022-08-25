@@ -7,6 +7,7 @@ import Logout from './Utilities/logout';
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { useState, useEffect } from 'react';
 import Home from './routes/Home';
+import ChatRoomEntry from './routes/ChatRoomEntry';
 import ChatRoom from './routes/ChatRoom';
 const App = () => {
 
@@ -55,7 +56,7 @@ const App = () => {
                   <li className="dropdown-item">
                     <NavLink to="/games" className={({ isActive }) => isActive ? "activeStyle" : "nActiveStyle"}>Schedule</NavLink></li>
                   {user ? <li className="dropdown-item">
-                    <NavLink to="/chatRoom" className={({ isActive }) => isActive ? "activeStyle" : "nActiveStyle"}>Chat room</NavLink></li>
+                    <NavLink to="/chatRoomEntry" className={({ isActive }) => isActive ? "activeStyle" : "nActiveStyle"}>Chat room</NavLink></li>
                     :
                     ""}
                 </ul>
@@ -77,11 +78,6 @@ const App = () => {
             <br></br>
             <Outlet />
           </div>
-          <footer id="sticky-footer" className="py-1 fixed-bottom bg-secondary text-white-50 w-100">
-            <div className="container text-center">
-              <small>Copyright &copy; NYSL </small>
-            </div>
-          </footer>
         </div>,
       children: [
         {
@@ -98,7 +94,11 @@ const App = () => {
           element: <Gamesid />
         },
         {
-          path: 'ChatRoom',
+          path: 'ChatRoomEntry',
+          element: <ChatRoomEntry />
+        },
+        {
+          path: 'ChatRoomEntry/:game',
           element: <ChatRoom />
         }
       ]
