@@ -89,13 +89,16 @@
     transform: translateX(20px)
   }
 }
-#textCarousel{
+
+#textCarousel {
   height: 152.5px;
   text-align: center;
   font-weight: 700;
   display: flex;
-  justify-content: center; /* align horizontal */
-  align-items: center; /* align vertical */
+  justify-content: center;
+  /* align horizontal */
+  align-items: center;
+  /* align vertical */
 }
 
 .first {
@@ -109,27 +112,51 @@
   background-color: #D3D3D3;
 }
 
-.second {
+#second {
   height: 430px;
   overflow-y: scroll;
   word-wrap: break-word;
+  padding-bottom: 10px;
 }
 
-.second::-webkit-scrollbar {
+#second::-webkit-scrollbar {
   width: 5px;
 }
 
-.second::-webkit-scrollbar-track {
+#second::-webkit-scrollbar-track {
   box-shadow: inset 0 0 5px grey;
   border-radius: 10px;
 }
 
-.second::-webkit-scrollbar-thumb {
+#second::-webkit-scrollbar-thumb {
   background: black;
   border-radius: 10px;
 }
 
-.second::-webkit-scrollbar-thumb:hover {
+#second::-webkit-scrollbar-thumb:hover {
   background: rgb(54, 56, 58);
 }
 
+.chatMessanger {
+  top: 0;
+  position: sticky;
+  white-space: initial;
+}
+.messageMaker{
+  width: 90%;
+  margin: auto;
+  margin-top: 10px;
+}
+.messageMakerProfile{
+  box-shadow: 6px 10px 5px 8px 	#808080;
+  margin-bottom: 20px;
+  text-align: left;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: large;
+  font-weight: 700;
+}
+.messageMakerText{
+  font-size: 15px;
+  text-align: left;
+  font-family: 'Courier New', Courier, monospace;
+}

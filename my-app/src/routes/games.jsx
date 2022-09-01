@@ -236,6 +236,7 @@ export default function games() {
           </div>
         </div>
       </div>
+      
     </div>
   );
 }
