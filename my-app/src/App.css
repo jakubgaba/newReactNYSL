@@ -155,6 +155,12 @@
   font-size: large;
   font-weight: 700;
 }
+.messageMakerProfile span{
+  float: right;
+  padding-right: 5px;
+  font-weight: normal;
+  font-family: 'Times New Roman', Times, serif;
+}
 .messageMakerText{
   font-size: 15px;
   text-align: left;

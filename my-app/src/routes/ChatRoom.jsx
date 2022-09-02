@@ -15,7 +15,7 @@ const ChatRoom = () => {
     if (error) return error.message
 
 
-    let items = snapshots.val()[game];   //messages.game_1
+    let items = snapshots.val()[game];
     var result = [];
     let itemList = [];
 
@@ -30,10 +30,12 @@ const ChatRoom = () => {
             <div key={index}>
                 <div className='messageMaker'>
                     <div className='messageMakerProfile'>
-                        {item[0].user}
+                        <div>
+                            {item[0].user} <span>Timestamp</span>
+                        </div>
                     </div>
                     <div className='messageMakerText'>
-                         {item[0].message}
+                        {item[0].message}
                     </div>
                 </div>
                 {/* {item[0].user} */}
