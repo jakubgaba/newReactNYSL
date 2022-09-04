@@ -3,13 +3,14 @@ import { getDatabase, ref } from "firebase/database";
 import "../App.css";
 import { useParams, useNavigate } from "react-router-dom";
 import React from 'react';
-
+import Writer from '../components/Writer'
 
 const ChatRoom = () => {
     let { game } = useParams();
     const dbRef = getDatabase();
     const [snapshots, loading, error] = useObject(ref(dbRef, 'messages'), 'value');
     const navigate = useNavigate();
+
 
     if (loading) return "Data are loading"
     if (error) return error.message
@@ -22,7 +23,6 @@ const ChatRoom = () => {
 
     for (var i in items)
         result.push([items[i]]);
-
 
 
     result.forEach((item, index) => {
@@ -52,8 +52,8 @@ const ChatRoom = () => {
                     {itemList}
                 </div>
                 <div className='input-group'>
-                    <input type="text" className="form-control chatMessanger" id="formGroupExampleInput" placeholder="Write a message"></input>
-                    <button className="btn btn-outline-primary" type="button" id="button-addon2">Send</button>
+                    <input type="text" className="form-control chatMessanger" id="formGroupExampleInput" placeholder="Write a message to the chat"></input>
+                    <Writer message={document.getElementById("formGroupExampleInput")} >Send</Writer>
                 </div>
             </div>
             <br></br>
