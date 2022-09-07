@@ -4,6 +4,8 @@ import "../App.css";
 import { useParams, useNavigate } from "react-router-dom";
 import React from 'react';
 import Writer from '../components/Writer'
+import { useState, useEffect } from 'react';
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 const ChatRoom = () => {
     let { game } = useParams();
@@ -11,18 +13,30 @@ const ChatRoom = () => {
     const [snapshots, loading, error] = useObject(ref(dbRef, 'messages'), 'value');
     const navigate = useNavigate();
 
+    const [user, setUser] = useState(getAuth());
+
+    useEffect(() => {
+        const auth = getAuth();
+        onAuthStateChanged(auth, (user) => {
+            setUser(user);
+        })
+    }, [user])
 
     if (loading) return "Data are loading"
     if (error) return error.message
 
 
-    let items = snapshots.val()[game];
+    let items = Object.values(snapshots.val()[game]);
     var result = [];
     let itemList = [];
 
+    items.sort((a, b) => {
+        return a.timestamp - b.timestamp;
+    });
 
-    for (var i in items)
+    for (var i in items) {
         result.push([items[i]]);
+    }
 
 
     result.forEach((item, index) => {
@@ -31,20 +45,19 @@ const ChatRoom = () => {
                 <div className='messageMaker'>
                     <div className='messageMakerProfile'>
                         <div>
-                            {item[0].user} <span>Timestamp</span>
+                            {item[0].user} <span>{item[0].timestamp}</span>
                         </div>
                     </div>
                     <div className='messageMakerText'>
                         {item[0].message}
                     </div>
                 </div>
-                {/* {item[0].user} */}
             </div>
         )
     })
 
 
-    // console.log(snapshots.val()[game]);
+    if (user == null) { window.location.pathname = "/" }
     return (
         <div>
             <div className='first'>
@@ -53,7 +66,7 @@ const ChatRoom = () => {
                 </div>
                 <div className='input-group'>
                     <input type="text" className="form-control chatMessanger" id="formGroupExampleInput" placeholder="Write a message to the chat"></input>
-                    <Writer message={document.getElementById("formGroupExampleInput")} >Send</Writer>
+                    <Writer>Send</Writer>
                 </div>
             </div>
             <br></br>

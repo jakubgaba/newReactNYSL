@@ -1,17 +1,38 @@
 import "../App.css";
 import { getDatabase, ref, update } from "firebase/database";
+import { useObject } from 'react-firebase-hooks/database';
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { useState, useEffect } from 'react';
 
-const Writer = (props) => {
+const Writer = () => {
+    const dbRef = getDatabase();
+    let getActuallGame = window.location.pathname.substring(window.location.pathname.lastIndexOf('/') + 1) + "/";
+    const [snapshots] = useObject(ref(dbRef, 'messages/' + getActuallGame), 'value');
+    const [user, setUser] = useState(null);
+    useEffect(() => {
+        const auth = getAuth();
+        onAuthStateChanged(auth, (user) => {
+            setUser(user);
+        })
+    }, [user])
 
-    function writeUserData() {
-        const db = getDatabase();
-        update(ref(db, 'messages/game_3'),{
-            username: "olaas",
+    function writeUserData(location, text) {
+        update(ref(dbRef, 'messages/' + getActuallGame + location), {
+            message: text,
+            timestamp: Date.now(),
+            user: user.displayName
+
         });
     }
+
     function showMe() {
-        console.log(props.message.value);
-        writeUserData("Ola");
+        if (document.getElementById("formGroupExampleInput").value !== "") {
+            writeUserData("message_" + Number(snapshots.size + 1), document.getElementById("formGroupExampleInput").value);
+            document.getElementById("formGroupExampleInput").value = "";          
+        }
+        else {
+            alert("You need to write something");
+        }
     }
 
     return (

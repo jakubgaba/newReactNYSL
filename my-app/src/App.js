@@ -30,6 +30,7 @@ const App = () => {
   }, [user])
   console.log("Hide element activated: " + hide);
 
+  
 
   let routes = useRoutes([
     {
