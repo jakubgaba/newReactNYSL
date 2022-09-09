@@ -6,6 +6,11 @@ import React from 'react';
 import Writer from '../components/Writer'
 import { useState, useEffect } from 'react';
 import { getAuth, onAuthStateChanged } from "firebase/auth";
+import Scroller from '../components/Scroller';
+// function scrollToBottom() {
+//     document.getElementById("second").scrollTop = document.getElementById("second").scrollHeight;
+//   }
+
 
 const ChatRoom = () => {
     let { game } = useParams();
@@ -14,6 +19,7 @@ const ChatRoom = () => {
     const navigate = useNavigate();
 
     const [user, setUser] = useState(getAuth());
+
 
     useEffect(() => {
         const auth = getAuth();
@@ -55,14 +61,15 @@ const ChatRoom = () => {
             </div>
         )
     })
-
-
     if (user == null) { window.location.pathname = "/" }
+
+
     return (
         <div>
             <div className='first'>
                 <div id='second'>
                     {itemList}
+                    <Scroller></Scroller>
                 </div>
                 <div className='input-group'>
                     <input type="text" className="form-control chatMessanger" id="formGroupExampleInput" placeholder="Write a message to the chat"></input>

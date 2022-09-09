@@ -9,6 +9,7 @@ const Writer = () => {
     let getActuallGame = window.location.pathname.substring(window.location.pathname.lastIndexOf('/') + 1) + "/";
     const [snapshots] = useObject(ref(dbRef, 'messages/' + getActuallGame), 'value');
     const [user, setUser] = useState(null);
+
     useEffect(() => {
         const auth = getAuth();
         onAuthStateChanged(auth, (user) => {
@@ -25,13 +26,18 @@ const Writer = () => {
         });
     }
 
+    
+
     function showMe() {
         if (document.getElementById("formGroupExampleInput").value !== "") {
             writeUserData("message_" + Number(snapshots.size + 1), document.getElementById("formGroupExampleInput").value);
-            document.getElementById("formGroupExampleInput").value = "";          
+            document.getElementById("formGroupExampleInput").value = "";    
+              
         }
         else {
             alert("You need to write something");
+            // document.getElementById("second").addEventListener("scroll", () => console.log("Div was scrolled"));
+            
         }
     }
 

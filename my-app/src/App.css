@@ -117,10 +117,12 @@
   overflow-y: scroll;
   word-wrap: break-word;
   padding-bottom: 10px;
+  
 }
 
 #second::-webkit-scrollbar {
   width: 5px;
+ 
 }
 
 #second::-webkit-scrollbar-track {
@@ -130,12 +132,13 @@
 
 #second::-webkit-scrollbar-thumb {
   background: black;
-  border-radius: 10px;
+  border-radius: 10px; 
 }
 
 #second::-webkit-scrollbar-thumb:hover {
   background: rgb(54, 56, 58);
 }
+
 
 .chatMessanger {
   top: 0;
@@ -157,8 +160,9 @@
 }
 .messageMakerProfile span{
   float: right;
-  padding-right: 5px;
+  margin-right: 5px;
   font-weight: normal;
+  font-size: small;
   font-family: 'Times New Roman', Times, serif;
 }
 .messageMakerText{
