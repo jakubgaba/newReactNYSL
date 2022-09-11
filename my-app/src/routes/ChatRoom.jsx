@@ -69,10 +69,13 @@ const ChatRoom = () => {
             <div className='first'>
                 <div id='second'>
                     {itemList}
-                    <Scroller></Scroller>
+                    
                 </div>
+                <Scroller></Scroller>
                 <div className='input-group'>
-                    <input type="text" className="form-control chatMessanger" id="formGroupExampleInput" placeholder="Write a message to the chat"></input>
+                    
+                    <input type="text" className="form-control chatMessanger" id="formGroupExampleInput" placeholder="Write a message to the chat"> 
+                    </input>
                     <Writer>Send</Writer>
                 </div>
             </div>

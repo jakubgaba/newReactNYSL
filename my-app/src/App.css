@@ -2,6 +2,18 @@
   text-decoration: none;
   color: lightgreen;
   font-size: 20px;
+
+}
+
+#scrollClick {
+  color: cadetblue;
+  font-size: medium;
+  border: none;
+  background: none;
+  word-spacing: 20px;
+}
+#scrollClick:active{
+  color: blue;
 }
 
 .nActiveStyle {
@@ -117,12 +129,12 @@
   overflow-y: scroll;
   word-wrap: break-word;
   padding-bottom: 10px;
-  
+
 }
 
 #second::-webkit-scrollbar {
   width: 5px;
- 
+
 }
 
 #second::-webkit-scrollbar-track {
@@ -132,7 +144,7 @@
 
 #second::-webkit-scrollbar-thumb {
   background: black;
-  border-radius: 10px; 
+  border-radius: 10px;
 }
 
 #second::-webkit-scrollbar-thumb:hover {
@@ -141,31 +153,34 @@
 
 
 .chatMessanger {
-  top: 0;
   position: sticky;
   white-space: initial;
 }
-.messageMaker{
+
+.messageMaker {
   width: 90%;
   margin: auto;
   margin-top: 10px;
 }
-.messageMakerProfile{
-  box-shadow: 6px 10px 5px 8px 	#808080;
+
+.messageMakerProfile {
+  box-shadow: 6px 10px 5px 8px #808080;
   margin-bottom: 20px;
   text-align: left;
   font-family: 'Courier New', Courier, monospace;
   font-size: large;
   font-weight: 700;
 }
-.messageMakerProfile span{
+
+.messageMakerProfile span {
   float: right;
   margin-right: 5px;
   font-weight: normal;
   font-size: small;
   font-family: 'Times New Roman', Times, serif;
 }
-.messageMakerText{
+
+.messageMakerText {
   font-size: 15px;
   text-align: left;
   font-family: 'Courier New', Courier, monospace;
