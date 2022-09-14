@@ -1,37 +1,29 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 
 const Scroller = () => {
 
-    const [scroll, setScroll] = useState();
-    const [maxScroll, setMaxScroll] = useState();
-    const [showScroll, setShow] = useState();
+    const [scroll, setScroll] = useState(false);
 
-    useEffect(() => {
-        if (scroll < maxScroll) {
-            console.log("Olaa");
-            setShow(
-                React.createElement(
-                    "button",
-                    {
-                        id: 'scrollClick', onClick: () => {
-                            setScroll(document.getElementById("second").scrollTop = document.getElementById("second").scrollHeight)
-                        }
-                    },
-                    `MOVE DOWN`
-                ))
-        }
-        else {
-            setShow(null)
-        }
-    }, [scroll, maxScroll])
-
-
+    let element = React.createElement(
+        "button",
+        {
+            id: 'scrollClick', onClick: () => {
+                document.getElementById("second").scrollTop = document.getElementById("second").scrollHeight;
+                setScroll(false);
+            }
+        },
+        `MOVE DOWN`
+    );
 
     if (document.getElementById("second") !== null) {
         document.getElementById("second").addEventListener("touchstart", () => {
-            setScroll(document.getElementById("second").scrollTop);
-            setMaxScroll(Math.round((60 / 100) * document.getElementById("second").scrollHeight));
+            if (Math.round((60 / 100) * document.getElementById("second").scrollHeight) > document.getElementById("second").scrollTop) {
+                setScroll(true);
+            }
+            else {
+                setScroll(false);
+            }
         });
     }
 
@@ -39,7 +31,7 @@ const Scroller = () => {
 
     return (
         <div>
-            {showScroll}
+            {scroll ? element : ""}
         </div>
     )
 
