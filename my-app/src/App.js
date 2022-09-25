@@ -9,6 +9,7 @@ import { useState, useEffect } from 'react';
 import Home from './routes/Home';
 import ChatRoomEntry from './routes/ChatRoomEntry';
 import ChatRoom from './routes/ChatRoom';
+import ChatRoomPhotos from './routes/ChatRoomPhotos'
 const App = () => {
 
   const [user, setUser] = useState(null);
@@ -101,6 +102,10 @@ const App = () => {
         {
           path: 'ChatRoomEntry/:game',
           element: <ChatRoom />
+        },
+        {
+          path: 'ChatRoomEntry/photos/:game',
+          element: <ChatRoomPhotos />
         }
       ]
     }

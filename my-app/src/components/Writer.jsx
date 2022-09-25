@@ -22,7 +22,6 @@ const Writer = () => {
             message: text,
             timestamp: Date.now(),
             user: user.displayName
-
         });
     }
 

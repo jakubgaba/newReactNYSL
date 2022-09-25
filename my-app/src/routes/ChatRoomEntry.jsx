@@ -26,7 +26,8 @@ const ChatRoomEntry = () => {
                             <h5 className="card-title">Game 1</h5>
                             <p className="card-text ">Chat board for first team</p>
                             <p className="card-text text-light bg-dark">Date 09.01</p>
-                            <Link to={{ pathname: "/chatRoomEntry/game_1" }}><button className="btn btn-primary">Entry</button></Link>
+                            <Link to={{ pathname: "/chatRoomEntry/game_1" }}><button className="btn btn-primary" style={{marginBottom: "2px"}}>Entry chat</button></Link>
+                            <Link to={{ pathname: "/chatRoomEntry/photos/game_1" }}><button className="btn btn-primary">Entry photo</button></Link>
                         </div>
                     </div>
                     <div className="card my-1 bg-light" style={{ width: "50%" }}>
@@ -35,7 +36,8 @@ const ChatRoomEntry = () => {
                             <h5 className="card-title">Game 2</h5>
                             <p className="card-text ">Chat board for second team</p>
                             <p className="card-text text-light bg-dark">Date 09.01</p>
-                            <Link to={{ pathname: "/chatRoomEntry/game_2" }}><button className="btn btn-primary">Entry</button></Link>
+                            <Link to={{ pathname: "/chatRoomEntry/game_2" }}><button className="btn btn-primary" style={{marginBottom: "2px"}} >Entry chat</button></Link>
+                            <Link to={{ pathname: "/chatRoomEntry/photos/game_2" }}><button className="btn btn-primary">Entry photo</button></Link>
                         </div>
                     </div>
                 </div>

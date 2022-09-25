@@ -6,7 +6,7 @@ import React from 'react';
 import Writer from '../components/Writer'
 import { useState, useEffect } from 'react';
 import { getAuth, onAuthStateChanged } from "firebase/auth";
-import Scroller from '../components/Scroller';
+
 // function scrollToBottom() {
 //     document.getElementById("second").scrollTop = document.getElementById("second").scrollHeight;
 //   }
@@ -20,6 +20,18 @@ const ChatRoom = () => {
 
     const [user, setUser] = useState(getAuth());
 
+    const [scroll, setScroll] = useState(false);
+
+    let element = React.createElement(
+        "button",
+        {
+            id: 'scrollClick', onClick: () => {
+                document.getElementById("second").scrollTop = document.getElementById("second").scrollHeight;
+                setScroll(false);
+            }
+        },
+        `MOVE DOWN`
+    );
 
     useEffect(() => {
         const auth = getAuth();
@@ -44,7 +56,6 @@ const ChatRoom = () => {
         result.push([items[i]]);
     }
 
-
     result.forEach((item, index) => {
         itemList.push(
             <div key={index}>
@@ -61,20 +72,36 @@ const ChatRoom = () => {
             </div>
         )
     })
+
+
     if (user == null) { window.location.pathname = "/" }
+
 
 
     return (
         <div>
-            <div className='first'>
+            <div className='first' id="bla">
                 <div id='second'>
                     {itemList}
-                    
                 </div>
-                <Scroller></Scroller>
+
+                {
+                    document.addEventListener('touchstart', () => {
+                     if(document.location.pathname.includes("chatRoomEntry/game_")){
+                        if (Math.round((60 / 100) * document.getElementById("second").scrollHeight) > document.getElementById("second").scrollTop) {
+                            setScroll(true);
+                        }
+                        else {
+                            setScroll(false);
+                        }
+                    }
+                    })
+                }
+
+                {scroll ? element : ""}
+
                 <div className='input-group'>
-                    
-                    <input type="text" className="form-control chatMessanger" id="formGroupExampleInput" placeholder="Write a message to the chat"> 
+                    <input type="text" className="form-control chatMessanger" id="formGroupExampleInput" placeholder="Write a message to the chat">
                     </input>
                     <Writer>Send</Writer>
                 </div>
