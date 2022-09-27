@@ -7,9 +7,7 @@ import Writer from '../components/Writer'
 import { useState, useEffect } from 'react';
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 
-// function scrollToBottom() {
-//     document.getElementById("second").scrollTop = document.getElementById("second").scrollHeight;
-//   }
+
 
 
 const ChatRoom = () => {
@@ -88,7 +86,7 @@ const ChatRoom = () => {
                 {
                     document.addEventListener('touchstart', () => {
                      if(document.location.pathname.includes("chatRoomEntry/game_")){
-                        if (Math.round((60 / 100) * document.getElementById("second").scrollHeight) > document.getElementById("second").scrollTop) {
+                        if ((Math.round((50 / 100) * document.getElementById("second").scrollHeight) > document.getElementById("second").scrollTop) && (document.getElementById("second").scrollTop >= 300))  {
                             setScroll(true);
                         }
                         else {

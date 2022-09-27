@@ -46,6 +46,7 @@ const bunker = getStorage();
 const dbRef = getDatabase();
 
 function writeUserData(photoNumber, url, user, getActuallGame) {
+  
   update(reference(dbRef, 'photos/'+ getActuallGame + "photoD_"+ Number(photoNumber)), {
       url: url,
       timestamp: Date.now(),
