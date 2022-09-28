@@ -82,17 +82,16 @@ const ChatRoom = () => {
                 <div id='second'>
                     {itemList}
                 </div>
-
                 {
                     document.addEventListener('touchstart', () => {
-                     if(document.location.pathname.includes("chatRoomEntry/game_")){
-                        if ((Math.round((50 / 100) * document.getElementById("second").scrollHeight) > document.getElementById("second").scrollTop) && (document.getElementById("second").scrollTop >= 300))  {
-                            setScroll(true);
+                        if (document.location.pathname.includes("chatRoomEntry/game_")) {
+                            if ((Math.round((50 / 100) * document.getElementById("second").scrollHeight) > document.getElementById("second").scrollTop) && (document.getElementById("second").scrollTop >= 300)) {
+                                setScroll(true);
+                            }
+                            else {
+                                setScroll(false);
+                            }
                         }
-                        else {
-                            setScroll(false);
-                        }
-                    }
                     })
                 }
 

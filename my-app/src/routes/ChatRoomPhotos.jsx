@@ -1,6 +1,6 @@
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import "../App.css";
-import { getDatabase, ref} from "firebase/database";
+import { getDatabase, ref } from "firebase/database";
 import { useObject } from 'react-firebase-hooks/database';
 import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from "react-router-dom";
@@ -25,11 +25,11 @@ const ChatRoomPhotos = () => {
     if (loading) return "Data are loading"
     if (error) return error.message
 
-   
+
     const handleFile = async (evt) => {
         const file = evt.target.files[0];
         const photoNumber = Number(snapshots.child(game).size + 1);
-        await saveImage(game, file, photoNumber, user, getActuallGame); 
+        await saveImage(game, file, photoNumber, user, getActuallGame);
         console.log("handleEvent triggered");
     };
 
@@ -55,34 +55,40 @@ const ChatRoomPhotos = () => {
                         </div>
                     </div>
                     <div className='messageMakerText'>
-                        <img src={item[0].url} alt="Bild" width="100%" height="100%" onClick={() => {
-                            window.open(item[0].url)
+                        <img src={item[0].url} alt="Bild" width="100%" height="100%" onClick={(bro) => {
+
+                            if (!document.fullscreenElement) {
+                                bro.currentTarget.requestFullscreen().catch((err) => {
+                                    alert(`Error attempting to enable fullscreen mode: ${err.message} (${err.name})`);
+                                });
+                            } else {
+                                document.exitFullscreen();
+                            }
                         }}></img>
                     </div>
                 </div>
             </div>
         )
     })
-    
+
     return (
         <div>
-            <div>
             <div className='first' id="bla">
                 <div id='second'>
-                {itemList}
+                    {itemList}
                 </div>
                 <div className="pictureChoice">
-                <div className="pictureLabel">
-                <label htmlFor="galleryPic" className="btn btn-secondary">Choose a picture from gallery</label>
-                <input style={{ visibility: "hidden" }} id="galleryPic" name="galleryPic" type="file" accept="image/*" onChange={event => handleFile(event)}></input>
-                </div>
-                <div className="pictureLabel">
-                <label htmlFor="cameraPic" className="btn btn-secondary">Choose a picture from camera </label>
-                <input style={{ visibility: "hidden" }} id="cameraPic" name="cameraPic" type="file" accept="image/*" capture onChange={event => handleFile(event)}></input>
-                </div>
+                    <div className="pictureLabel">
+                        <label htmlFor="galleryPic" className="btn btn-secondary">Choose a picture from gallery</label>
+                        <input style={{ visibility: "hidden" }} id="galleryPic" name="galleryPic" type="file" accept="image/*" onChange={event => handleFile(event)}></input>
+                    </div>
+                    <div className="pictureLabel">
+                        <label htmlFor="cameraPic" className="btn btn-secondary">Choose a picture from camera </label>
+                        <input style={{ visibility: "hidden" }} id="cameraPic" name="cameraPic" type="file" accept="image/*" capture onChange={event => handleFile(event)}></input>
+                    </div>
                 </div>
             </div>
-            </div>
+
             <br></br>
             <button onClick={() => navigate(-1)} type="button" className="btn btn-outline-success">Go back</button>
         </div>
